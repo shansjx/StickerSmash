@@ -23,8 +23,8 @@ export default function EmojiPicker({ isVisible, children, onClose }: Props) {
             }).start();
         } else {
             Animated.timing(slideAnim, {
-                toValue: 300, // Slide back down
-                duration: 350,
+                toValue: 300, // Slide back down to off-screen position
+                duration: 300,
                 useNativeDriver: true,
             }).start(() => {
                 onClose();
@@ -41,7 +41,6 @@ export default function EmojiPicker({ isVisible, children, onClose }: Props) {
             onClose();
         });
     };
-
 
     return (
         <Modal animationType="none" transparent={true} visible={isVisible}>
